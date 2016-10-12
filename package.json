@@ -1,0 +1,44 @@
+{
+  "name": "react-simple-form-gem",
+  "version": "1.0.0",
+  "description": "react component for simple_form gem",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "gulp test",
+    "prepublish": "gulp clean; gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masarakki/react-simple-form.git"
+  },
+  "keywords": [
+    "react",
+    "simple_form",
+    "ruby"
+  ],
+  "author": "masarakki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/masarakki/react-simple-form/issues"
+  },
+  "homepage": "https://github.com/masarakki/react-simple-form#readme",
+  "dependencies": {
+    "date-utils": "^1.2.21",
+    "lodash": "^4.16.4",
+    "react": "^15.3.2",
+    "sprintf-js": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-root-import": "^4.1.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-mocha": "^3.0.1",
+    "gulp-plumber": "^1.1.0",
+    "react-dom": "^15.3.2"
+  }
+}
