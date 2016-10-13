@@ -3,17 +3,15 @@ import _ from 'lodash';
 
 class YearInput extends React.Component {
   render() {
-    const options = this.props.yearRange.map(y => {
+    const options = _.range(this.props.from, this.props.to + 1).map(y => {
       return (
-        <option value={y}
-                selected={this.props.year == y && "selected"}>
-          {y}
-        </option>
+        <option value={y}>{y}</option>
       );
     });
 
     return (
-      <select className="form-control">
+      <select className="form-control"
+              value={this.props.year}>
         {options}
       </select>
     );
@@ -22,7 +20,8 @@ class YearInput extends React.Component {
 
 const thisYear = new Date().getFullYear();
 YearInput.defaultProps = {
-  yearRange: _.range(thisYear - 5, thisYear + 5)
+  from: thisYear - 5,
+  to: thisYear + 5
 };
 
 export default YearInput;
