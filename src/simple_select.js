@@ -4,11 +4,11 @@ import { sprintf } from 'sprintf-js';
 import utils from './utils';
 
 const propTypes = {
-  from: React.PropTypes.integer,
-  to: React.PropTypes.integer,
-  object: React.PropTypes.string,
+  from: React.PropTypes.number,
+  to: React.PropTypes.number,
+  object: React.PropTypes.number,
   name: React.PropTypes.string,
-  order: React.PropTypes.integer,
+  order: React.PropTypes.number,
   format: React.PropTypes.string
 };
 
