@@ -6,12 +6,8 @@ import dateUtils from './date-utils';
 class DateSelect extends React.Component {
   render() {
     const name = utils.generateName(this.props.object, this.props.name, 3);
-    const options = _.range(1, dateUtils.getDaysInMonth(this.props.year, this.props.month) + 1).map(d => {
-      const key = `date_${d}`;
-      return (
-        <option value={d} key={key}>{d}</option>
-      );
-    });
+    const options = _.range(1, dateUtils.getDaysInMonth(this.props.year, this.props.month) + 1).map(d => <option value={d} key={d}>{d}</option>);
+
     return (
       <select className="form-control"
               name={name}

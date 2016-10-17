@@ -6,12 +6,7 @@ const month_en = ['January', 'Febrary', 'March', 'April', 'May', 'June', 'July',
 class MonthSelect extends React.Component {
   render() {
     const name = utils.generateName(this.props.object, this.props.name, 2);
-    const options = month_en.map((m, i) => {
-      const key = `month_${i}`;
-      return (
-        <option value={i + 1} key={key}>{m}</option>
-      );
-    });
+    const options = month_en.map((m, i) => <option value={i + 1} key={i + 1 }>{m}</option>);
 
     return (
       <select className="form-control"
