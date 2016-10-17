@@ -6,7 +6,7 @@ import utils from './utils';
 const propTypes = {
   from: React.PropTypes.number,
   to: React.PropTypes.number,
-  object: React.PropTypes.number,
+  object: React.PropTypes.string,
   name: React.PropTypes.string,
   order: React.PropTypes.number,
   format: React.PropTypes.string
