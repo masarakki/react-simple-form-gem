@@ -1,6 +1,13 @@
 import React from 'react';
 import _ from 'lodash';
-import utils from './date-utils';
+import utils from './utils';
+
+
+const thisYear = new Date().getFullYear();
+const defaultProps = {
+  from: thisYear - 5,
+  to: thisYear + 5
+};
 
 class YearSelect extends React.Component {
   render() {
@@ -11,26 +18,18 @@ class YearSelect extends React.Component {
         <option value={y} key={key}>{y}</option>
       );
     });
-    const handleChange = () => {
-      this.props.onChange('year', this.refs.year.value);
-    };
 
     return (
       <select className="form-control"
               name={name}
               value={this.props.value}
-              onChange={handleChange}
-              ref="year">
+              onChange={this.props.onChange}>
         {options}
       </select>
     );
   }
 };
 
-const thisYear = new Date().getFullYear();
-YearSelect.defaultProps = {
-  from: thisYear - 5,
-  to: thisYear + 5
-};
+YearSelect.defaultProps = defaultProps;
 
 export default YearSelect;

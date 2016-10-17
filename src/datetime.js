@@ -48,13 +48,13 @@ class DateTimeInput extends React.Component {
            value={this.state.year}
            object={this.props.object}
            name={this.props.name}
-           onChange={handleChange} />
+           onChange={y => handleChange('year', y.target.value)} />
         &nbsp;
         <MonthSelect
            value={this.state.month}
            object={this.props.object}
            name={this.props.name}
-           onChange={handleChange} />
+           onChange={m => handleChange('month', m.target.value)} />
         &nbsp;
         <DateSelect
            value={this.state.date}
@@ -62,7 +62,7 @@ class DateTimeInput extends React.Component {
            month={this.state.month}
            object={this.props.object}
            name={this.props.name}
-           onChange={handleChange} />
+           onChange={d => handleChange('date', d.target.value)} />
         —
         <SimpleSelect
            value={this.state.hours}
