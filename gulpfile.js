@@ -10,9 +10,9 @@ gulp.task('build', () => {
 });
 
 gulp.task('test', () => {
-  gulp.src('test/**/*.js')
+  gulp.src('__tests__')
     .pipe($.plumber())
-    .pipe($.mocha());
+    .pipe($.jest.default());
 });
 
 gulp.task('clean', () => {
