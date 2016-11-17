@@ -1,9 +1,9 @@
 import React from 'react';
-import utils from './utils';
+import utils from '../utils';
 
 const month_en = ['January', 'Febrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-class MonthSelect extends React.Component {
+class Month extends React.Component {
   render() {
     const name = utils.generateName(this.props.object, this.props.name, 2);
     const options = month_en.map((m, i) => <option value={i + 1} key={i + 1 }>{m}</option>);
@@ -19,4 +19,4 @@ class MonthSelect extends React.Component {
   }
 }
 
-export default MonthSelect;
+export default Month;

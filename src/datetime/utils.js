@@ -14,8 +14,4 @@ const getDaysInMonth = (year, month) => {
   return 28;
 };
 
-const generateName = (object, name, type) => {
-
-}
-
-export default { getDaysInMonth, isLeapYear, generateName };
+export default { getDaysInMonth, isLeapYear };

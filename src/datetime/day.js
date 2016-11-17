@@ -1,9 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
-import utils from './utils';
-import dateUtils from './date-utils';
+import utils from '../utils';
+import dateUtils from './utils';
 
-class DateSelect extends React.Component {
+class Day extends React.Component {
   render() {
     const name = utils.generateName(this.props.object, this.props.name, 3);
     const options = _.range(1, dateUtils.getDaysInMonth(this.props.year, this.props.month) + 1).map(d => <option value={d} key={d}>{d}</option>);
@@ -19,4 +19,4 @@ class DateSelect extends React.Component {
   }
 }
 
-export default DateSelect;
+export default Day;

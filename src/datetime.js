@@ -1,8 +1,8 @@
 import React from 'react';
-import dateUtils from './date-utils';
-import YearSelect from './year_select';
-import MonthSelect from './month_select';
-import DateSelect from './date_select';
+import dateUtils from './datetime/utils';
+import Year from './datetime/year';
+import Month from './datetime/month';
+import Day from './datetime/day';
 import SimpleSelect from './simple_select';
 import _ from 'lodash';
 
@@ -44,19 +44,19 @@ class DateTimeInput extends React.Component {
 
     return(
       <div className="form-inline">
-        <YearSelect
+        <Year
            value={this.state.year}
            object={this.props.object}
            name={this.props.name}
            onChange={y => handleChange('year', y.target.value)} />
         &nbsp;
-        <MonthSelect
+        <Month
            value={this.state.month}
            object={this.props.object}
            name={this.props.name}
            onChange={m => handleChange('month', m.target.value)} />
         &nbsp;
-        <DateSelect
+        <Day
            value={this.state.date}
            year={this.state.year}
            month={this.state.month}

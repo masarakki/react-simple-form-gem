@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-require('babel-core/register')();
+require('babel-core/register')({
+  presets: ['babel-preset-power-assert']
+});
+
 
 gulp.task('build', () => {
   gulp.src('src/**/*.js')
@@ -10,9 +13,9 @@ gulp.task('build', () => {
 });
 
 gulp.task('test', () => {
-  gulp.src('__tests__')
+  gulp.src('tests/**/*-test.js')
     .pipe($.plumber())
-    .pipe($.jest.default());
+    .pipe($.mocha({require: ['./tests/helper.js']}));
 });
 
 gulp.task('clean', () => {
@@ -22,5 +25,5 @@ gulp.task('clean', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(['src/**/*.js', 'test/**/*.js'], ['test']);
+  gulp.watch(['src/**/*.js', 'tests/**/*-test.js'], ['test']);
 });
