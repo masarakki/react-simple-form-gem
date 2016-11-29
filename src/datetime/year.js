@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import utils from './utils';
+import utils from '../utils';
 
 const propTypes = {
   from: React.PropTypes.number,
@@ -13,7 +13,7 @@ const defaultProps = {
   to: thisYear + 5
 };
 
-class YearSelect extends React.Component {
+class Year extends React.Component {
   render() {
     const name = utils.generateName(this.props.object, this.props.name, 1);
     const options = _.range(this.props.from, this.props.to + 1).map(y => <option value={y} key={y}>{y}</option>);
@@ -29,7 +29,7 @@ class YearSelect extends React.Component {
   }
 };
 
-YearSelect.propTypes = propTypes;
-YearSelect.defaultProps = defaultProps;
+Year.propTypes = propTypes;
+Year.defaultProps = defaultProps;
 
-export default YearSelect;
+export default Year;
